@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en" ng-app="CityApp">
+<head>
+
+  
+  <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
+    <title>CityApp</title>
+
+  <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+  </script>
+<style type="text/css">
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+}
+a {
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body onLoad="MM_preloadImages('images/index/boton2.png','images/btnOfertaschange.png','images/btnEventosChange.png','images/btnTiendasChange.png','images/btnCinesChange.png','images/btnComidasChange.png','images/btnMapaChange.png','images/btnContactoChange.png','images/btnParqueoChange.png')">
+
+<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.2.1.css"/>
+<link rel="stylesheet" href="css/themes/default/custom.css"/>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="testflight.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/jquery.mobile-1.2.1.js"></script>
+
+<style type="text/css">
+button {
+	font-family: "Roboto Bold Condensed";
+	font-size: 14px;
+	
+}
+
+.imgPeliculas{
+	max-height:180 px !important;
+	margin-top: 18 px; 
+	
+}
+
+
+</style>
+
+<!--inicio index-->
+
+<!--inicio home-->
+<div data-role="page" id="index" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: url(images/index/fondo.png) ;background-position: initial initial;
+background-repeat: initial initial; padding-top: 10px;">
+
+<div data-role="content" style="
+    padding-bottom: 0px;
+">
+
+	<div>
+    <img src="images/index/logoyleyenda.png">
+     
+    </div>
+</div>
+
+<div>
+  <ul class="ui-grid-solo" id="listIndex" style="
+    padding-left: 0px;
+">
+    
+					<!--<div style="
+                                padding-bottom: 10px;
+                                padding-left: 0px;
+                                padding-top: 0px;
+    
+								"> -->
+                                <div class="ui-block-a"><a href="#Home" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image90','','images/index/boton2.png',1)"><img src="images/index/sps.png" width="380" height="54" id="Image90"></a>
+           				     </div>					
+                      <div class="ui-block-a" >
+                	  <a href=""><img src="images/index/tgu.png"/></a>
+	  </div>		
+                             
+                              <div class="ui-block-a" >
+                	   <a  href=""><img src="images/index/alajuela.png"/></a>	
+               				 </div>		
+                   
+                  
+                 
+                   
+    </ul>
+
+</div>
+     
+
+</div>
+
+
+
+<!--fin index-->
+
+<!--inicio home-->
+<div data-role="page" id="Home" data-theme="c">
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href=""  id="btnCambiarUbicacion" class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px;text-shadow: none;">
+              Cambiar<br/>Ubicación
+    </a>
+        
+    <img src="images/headerhome.png">
+	<p/>
+</div>
+    
+
+    
+     
+     <div class="content"  style="padding-top: 10px;">
+         <ul class="ui-grid-d">
+          		<div class="ui-block-a" style="padding-bottom: 20px;">
+                <a href="#Ofertas" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image89','','images/btnOfertaschange.png',1)"><img src="images/ofertas.png" width="75" height="100" id="Image89"></a> </div>
+                	
+               
+                
+                <div class="ui-block-b">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+                </div>
+                
+                <div class="ui-block-c">
+                <a href="#Eventos" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('eventos','','images/btnEventosChange.png',1)"><img src="images/eventos.png" width="82" height="98" id="eventos"></a> </div>
+                
+                <div class="ui-block-d">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+                   
+                </div>
+                
+                <div class="ui-block-e" style="">
+           	    <a href="#Tiendas" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('tiendas','','images/btnTiendasChange.png',1)"><img src="images/tiendas.png" width="74" height="98" id="tiendas"></a> </div>
+                
+                <div class="ui-block-a" style="padding-bottom: 20px;">
+           	    <a href="#Cines" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('cines','','images/btnCinesChange.png',1)"><img src="images/cines.png" width="64" height="103" id="cines"></a> </div>
+                
+                            <div class="ui-block-b">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+                   
+                </div>
+                
+                <div class="ui-block-c">
+           	    <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('comidas','','images/btnComidasChange.png',1)"><img src="images/comidas.png" width="47" height="98" id="comidas"></a> </div>
+                
+                                
+                            <div class="ui-block-d">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+
+
+             </div>
+             
+                <div class="ui-block-e">
+           	    <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('mapa','','images/btnMapaChange.png',1)"><img src="images/mapa.png" width="93" height="91" id="mapa"></a> </div>
+                
+                
+                    <div class="ui-block-a" style="padding-bottom: 20px;"> 
+           	    <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contacto','','images/btnContactoChange.png',1)"><img src="images/contacto.png" width="69" height="95" id="contacto"></a> </div>
+                
+                                            <div class="ui-block-d">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+
+
+             </div>
+             
+             
+                <div class="ui-block-c">
+                <a href="#Parqueo" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('parqueo','','images/btnParqueoChange.png',1)"><img src="images/parqueo.png" width="72" height="97" id="parqueo"></a> </div>
+             
+                         
+                
+                                            <div class="ui-block-d">
+                	<img src="images/separador.png" style="
+    margin-left: 50%;
+    margin-right: 50%;
+">
+
+
+             </div>
+             
+                
+                
+                
+                
+                
+                
+                
+          
+       </ul>
+  </div>
+
+<div align="center">
+<img src="images/visitanosdesde.png"/>
+</div>
+         
+
+    
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioHome" ><a class="test"   href=""><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin home-->
+
+<!--inicio Cines-->
+
+
+<div data-role="page" id="Cines"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	    <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right " style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+        </a>
+    <img src="images/cine/cineheader.png">
+    
+	<p/>
+</div>
+    
+
+    
+     
+     <div class= data-role="listview">
+            <ul data-role="listview" id= "listapeliculas" >
+            
+          
+                <li><img class= "imgPeliculas" src="images/cine/sobrevivientethumb.png" style= "max-height:180px; margin-top:20px; margin-left: 8px">
+                <img src="images/cine/sobreviviente.png">
+
+                </li>
+
+                <img src="images/ofertas/separadorofertas.png" style="
+        margin-bottom: 10px;
+    "/>
+
+
+                           <li><img src="images/cine/dallas.png" style= "max-height:100%; margin-left: 8px">
+                <img src="images/cine/dallastxt.png">
+
+                </li>
+
+                <img src="images/ofertas/separadorofertas.png" style="
+        margin-bottom: 10px;
+    "/>
+          
+            
+            </ul>
+       
+                
+                
+      </div>
+             
+                
+                
+                
+                
+                
+             
+    
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioCine" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<!--fin cines-->
+
+<!--inicio Ofertas-->
+
+
+<div data-role="page" id="Ofertas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+  </a>
+    <img src="images/ofertas/headerofertas.png">
+    
+	<p/>
+</div>
+    
+
+    
+     
+     <div class= data-role="listview">
+            <ul data-role="listview"  >
+            
+          
+            <li><img src="images/ofertas/wendys.png" style= "margin-left: 8px">  
+            Sólo por hoy 19 de Febrero aprovecha un 15% de 
+            Descuento en todos los zapatos y un 20% en tennis...Te esperamos.
+          
+            
+            </li>
+            
+            <img src="images/ofertas/separadorofertas.png" style="
+    margin-bottom: 10px;
+"/> 
+            
+            
+            
+            
+             <li><img src="images/ofertas/apple.png" style= "margin-left: 8px"> 
+             Sólo por hoy 19 de Febrero aprovecha un 15% de 
+            Descuento en todos los zapatos y un 20% en tennis...Te esperamos.
+            </li>
+            
+                        <img src="images/ofertas/separadorofertas.png" style="
+    margin-bottom: 10px;
+"/> 
+            
+            
+              <li><img src="images/ofertas/ladylee.png"style= "margin-left: 8px"> Sólo por hoy 19 de Febrero aprovecha un 15% de 
+            Descuento en todos los zapatos y un 20% en tennis...Te esperamos.
+            </li>
+            
+                        <img src="images/ofertas/separadorofertas.png" style="
+    margin-bottom: 10px;
+"/> 
+            
+              <li><img src="images/ofertas/ladylee.png"style= "margin-left: 8px"> Sólo por hoy 19 de Febrero aprovecha un 15% de 
+            Descuento en todos los zapatos y un 20% en tennis...Te esperamos.
+            </li>
+            
+                        <img src="images/ofertas/separadorofertas.png" style="
+    margin-bottom: 10px;
+"/> 
+            
+              <li><img src="images/ofertas/ladylee.png"style= "margin-left: 8px"> Sólo por hoy 19 de Febrero aprovecha un 15% de 
+            Descuento en todos los zapatos y un 20% en tennis...Te esperamos.
+            </li>
+            
+                        <img src="images/ofertas/separadorofertas.png" style="
+    margin-bottom: 10px;
+"/> 
+            
+
+             </ul>
+                
+             </div>
+             
+                
+                
+                
+                
+                
+             
+    
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioOfertas" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!--fin ofertas-->
+
+<!--Tiendas-->
+<div data-role="page" id="Tiendas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href="#Home" class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+  </a>
+    <img src="images/tiendas/headertiendas.png">
+    
+	<p/>
+</div>
+    
+
+    
+     
+     <div class="content" id="results"> 
+         <ul class="ui-grid-a "   style="
+                                        padding-left: 10px;
+                                        padding-right: 10px;">
+          		<div class="ui-block-a">
+               	  <button id="btnBancos" >BANCOS</button>
+				</div>
+                	
+               
+                
+                <div class="ui-block-b">
+                <button>ROPA</button>
+     
+                </div>
+           
+             <div class="ui-block-a">
+                <button>ZAPATOS</button>
+     
+</div>
+                
+                  <div class="ui-block-b">
+                <button>HOGAR</button>
+     
+                </div>
+                
+                   <div class="ui-block-a">
+                <button>TECNOLOGIA</button>
+     
+                </div>
+                
+                   <div class="ui-block-b">
+                <button>MASCOTAS</button>
+     
+                </div>
+                
+                  <div class="ui-block-a">
+                <button>CAFE</button>
+     
+                </div>
+                
+                    <div class="ui-block-b">
+                <button>JOYERIA</button>
+     
+                </div>
+                
+                      <div class="ui-block-a">
+                <button>LIBROS</button>
+     
+                </div>
+                
+                      <div class="ui-block-b">
+                <button>VIAJES</button>
+     
+                </div>
+                
+                       <div class="ui-block-a">
+                <button>OTROS</button>
+     
+                </div>
+                
+                
+                
+             </div>
+             
+                
+                
+                
+                
+                
+             
+    
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioTiendas" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+<!--fin Tiendas-->
+
+<!--Tiendas Categorias-->
+
+<div data-role="page" id="TiendasCategorias" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href="#Tiendas"  class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+    </a>
+	
+    <img src="images/tiendas/headerbancos.png">
+	<p/>
+</div>
+    
+
+   <div data-role="content">
+                <ul class="list" data-role="listview" data-theme="c" data-inset="true">
+    
+					<div style="
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-top: 20px;
+    
+"> 					
+                    <a class="CategoriasLink" href="">Banco Atlántida</a>
+                   
+                    <img src="images/tiendas/separador2.png" />
+                
+                    </div>
+                    <div style="
+                        padding-bottom: 5px;
+                        padding-left: 20px;
+   					"> 					
+                    <a class="CategoriasLink" id="btnBancoContinental">Banco Continental</a><br/>
+                       <img src="images/tiendas/separador2.png" />
+                    
+                    </div>
+                    
+                     <div style="
+                        padding-bottom: 5px;
+                        padding-left: 20px;
+   					"> 					
+                    <a class="CategoriasLink" href="">Ficohsa</a><br/>
+                       <img src="images/tiendas/separador2.png" />
+                    
+                    </div>
+                    
+                     <div style="
+                        padding-bottom: 5px;
+                        padding-left: 20px;
+   					"> 					
+                    <a class="CategoriasLink" href="">Credomatic</a><br/>
+                       <img src="images/tiendas/separador2.png" />
+                    
+                    </div>
+                    
+                     <div style="
+                        padding-bottom: 5px;
+                        padding-left: 20px;
+   					"> 					
+                    <a class="CategoriasLink" href="">Banpaís</a><br/>
+                       <img src="images/tiendas/separador2.png" />
+                    
+                    </div>
+                </ul>
+   </div>
+
+    
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioTiendasCategorias" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--Fin Tiendas Categorias-->
+
+<!--inicio parqueo-->
+
+<div data-role="page" id="Parqueo" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+<div data-role="header" data-position="fixed" >
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+    </a>
+    <img src="images/headerparqueo.png" width="388" height="137" >
+	<p/>
+    
+  
+        
+</div>
+    <div> <img src="images/parqueoimg.png" style="padding-left: 5%; padding-right: 5%; margin-top:50px"> </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioParqueo" ><a class="test" ><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin parqueo-->
+
+<!--Banco Continental-->
+<div data-role="page" id="BancoContinental" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+<div data-role="header" data-position="fixed" >
+     <a data-role="button" href="#TiendasCategorias"  class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+    </a>
+        
+	
+    <img src="images/tiendas/headerbancos2.png" width="388" height="137">
+	<p/>
+</div>
+    <div> <img src="images/tiendas/bancocontinental.png" style="padding-left: 5%; padding-right: 5%;"> </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioBancoContinental" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+<!--Fin Banco Continental-->
+
+<!--inicio eventos-->
+<div data-role="page" id="Eventos" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+
+	<a data-role="button" href="#Home" class=" BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+    </a>
+	
+    <img src="images/eventos/headereventos.png" width="388" height="137" >
+	<p/>
+</div>
+    <div> <a id= "btnLlamarSabado" ><img src="images/eventos/calendar.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </a></div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioEventos" ><a class="test" ><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin eventos-->
+
+<!--inicio sabado 21-->
+<div data-role="page" id="Sabado" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Eventos"  class="BotonBackBorde ui-btn-right" style="padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              Regresar
+    </a>
+	
+    <img src="images/eventos/headereventos2.png" width="388" height="137" >
+	<p/>
+</div>
+    <div> <img src="images/eventos/eventofeb.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                
+                <li><a href=""><img src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioSabado" ><a class="test"><img src="images/inicio2-01.png"/></a></li>
+                <li><a href=""><img src="images/btnfavoritos.png"/></a></li>
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img src="images/btnconfig.png"/></a></li>
+            </ul>
+            
+            
+            
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin sabado 21-->
+ 
+</body>
+</html>
