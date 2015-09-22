@@ -1,0 +1,1653 @@
+<!doctype html>
+<html lang="en" ng-app="CityApp">
+<head>
+
+  
+  <meta charset="utf-8"/>
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0"/>
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />-->
+
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <title>CityApp</title>
+
+  <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+  </script>
+<style type="text/css">
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+}
+a {
+	font-weight: bold;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.2.1.css"/>
+    <link rel="stylesheet" href="css/themes/default/custom.css"/>
+    <link rel="stylesheet" href="css/fullcalendar.css"/>
+    <link rel="stylesheet" href="css/fullcalendar.print.css"/>
+    <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="PushNotification.js"></script>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.custom.min.js"></script>
+    <script src="js/jquery.mobile-1.2.1.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
+    <!--<script src="js/jquery-ui.custom.min.js"></script>-->
+    <!--<script src="js/jquery.mobile-1.2.1.js"></script>-->
+    <script src="js/fullcalendar/fullcalendar.js"></script>
+
+
+
+    <script src="js/MSJson.js"></script>
+
+    <script src="js/application/modal.js"></script>
+    <script src="js/application/pageIndex.js"></script>
+    <script src="js/application/pageDeals.js"></script>
+    <script src="js/application/pageStores.js"></script>
+    <script src="js/application/pageFood.js"></script>
+    <script src="js/application/pageMaps.js"></script>
+    <script src="js/application/pageCalendar.js"></script>
+    <script src="js/application/pageSearch.js"></script>
+    <script src="js/application/pageContact.js"></script>
+    <script src="js/application/pageSponsor.js"></script>
+    <!--<script src="js/fullcalendar.js"></script>-->
+    <!--<script src="js/application/pageLevelSelected.js"></script>-->
+
+
+    <style type="text/css">
+        button {
+            font-family: "Roboto Bold Condensed";
+            font-size: 14px;
+
+        }
+
+        .imgPeliculas{
+            max-height:180px !important;
+            margin-top: 18px;
+
+        }
+
+
+    </style>
+
+
+</head>
+
+<body onLoad="MM_preloadImages('images/index/boton2.png','images/btnOfertaschange.png','images/btnEventosChange.png','images/btnTiendasChange.png','images/btnCinesChange.png','images/btnComidasChange.png','images/btnMapaChange.png','images/btnContactoChange.png','images/btnParqueoChange.png','images/btnubicacionchange.png')">
+
+
+<!--inicio index-->
+
+<!--inicio home-->
+<div data-role="page" id="index" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: url(images/index/fondo.png) ;background-position: initial initial;
+background-repeat: initial initial; padding-top: 10px;">
+
+<div data-role="content" style="
+    padding-bottom: 0px;
+">
+
+	<div>
+    <img src="images/index/logoyleyenda.png">
+
+    </div>
+</div>
+
+<div>
+  <ul  class="ui-grid-solo" id="listIndex" style="
+    padding-left: 0px; margin-bottom:20px;
+">
+
+
+
+
+
+    </ul>
+
+</div>
+
+
+</div>
+
+
+
+<div class="ui-popup-container ui-popup-hidden" id="popupCloseRight-popup">
+    <div data-role="popup" id="popupCloseRight" class="ui-content ui-popup ui-overlay-shadow ui-corner-all ui-body-c" style="max-width:280px" aria-disabled="false" data-disabled="false" data-shadow="true" data-corners="true" data-transition="none" data-position-to="origin">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close">
+        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Close</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+    <p id="NotePromo"></p>
+</div></div>
+
+<!--fin index-->
+
+<!--inicio home-->
+<div data-role="page" id="Home" data-theme="c">
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href=""  id="btnCambiarUbicacion" class="BotonBackBorde ui-btn-left" style=" color:white; margin-top:5px;  padding-top: 0px; border: 0px;text-shadow: none;">
+              <img src="images/btnback.png">
+    </a>
+
+    <img id="imgHeaderHome" src="">
+	<p/>
+</div>
+
+
+
+
+     <div class="content"  style="padding-top: 10px;">
+
+
+         <ul data-role="listview" id="HomeList" style="margin-top:-20px;padding-left: 20px;">
+
+
+             <div class="ui-grid-d">
+
+                 <!--Primera Fila-->
+                 <div class="ui-block-e" id="btnOfertas" style="padding-bottom: 20px;margin-right: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image89','','images/btnofertaschange.png',1)">
+                         <img src="images/ofertas.png" style="width:60px;height:60px;" id="Image89">
+                         <h3 style="width: 60px;">OFERTAS</h3>
+
+                     </a>
+                 </div>
+
+                 <div class="ui-block-e" style="width: 4px;">
+                     <img src="images/separador.png">
+                 </div>
+
+                 <div id="btnCalendario" class="ui-block-c" style="margin-left: 7.5%;margin-right: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('eventos','','images/btneventoschange.png',1)">
+                         <img src="images/eventos.png" style="width:60px;height:60px;" id="eventos">
+                         <h3 style="width: 60px;">EVENTOS</h3>
+
+                     </a>
+
+                 </div>
+
+                 <div class="ui-block-e" style="width: 4px;">
+                     <img src="images/separador.png">
+                 </div>
+
+                 <div class="ui-block-e" id="btnTiendas" style="margin-left: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('tiendas','','images/btntiendaschange.png',1)">
+                         <img src="images/tiendas.png"  style="width:60px;height:60px;" id="tiendas">
+                         <h3 style="width: 60px;">TIENDAS</h3>
+                     </a>
+                 </div>
+
+                 <!--Fin Primera Fila-->
+
+                 <!--Segunda Fila-->
+                 <div id="btnCines" class="ui-block-a" style="padding-bottom: 20px;margin-right: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('cines','','images/btncineschange.png',1)">
+                         <img src="images/cines.png"  style="width:60px;height:60px;" id="cines">
+                         <h3 style="width: 60px;">CINES</h3>
+                     </a>
+                 </div>
+
+                 <div class="ui-block-e" style="width: 4px;">
+                     <img src="images/separador.png" >
+
+                 </div>
+
+                 <div  id="btnComidas" class="ui-block-e" style="margin-left: 7.5%;margin-right: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('comidas','','images/btnComidasChange.png',1)">
+                         <img src="images/comidas.png"  style="width:60px;height:60px;" id="comidas">
+                         <h3 style="width: 60px;">COMIDAS</h3>
+                     </a>
+                 </div>
+
+
+                 <div class="ui-block-e" style="width: 4px;">
+                     <img src="images/separador.png">
+                 </div>
+
+                 <div class="ui-block-e" id="btnMapas" style="margin-left: 7.5%;">
+                     <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('mapa','','images/btndirectoriochange.png',1)">
+                         <img src="images/directorio.png" style="width:67px;height:60px;" id="mapa">
+                         <h3 style="width: 67px;">DIRECTORIO</h3>
+                     </a>
+                 </div>
+
+                 <!--Fin Segunda Fila-->
+
+                 <!--Tercera Fila-->
+                 <div class="ui-block-a" style="padding-bottom: 20px;margin-right: 7.5%;">
+                     <a class="CategoriasHome" href="#Parqueo" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('parqueo','','images/btnparqueochange.png',1)">
+                         <img src="images/parqueo.png" style="width:60px;height:60px;" id="parqueo">
+                         <h3 style="width: 60px;">PARQUEO</h3>
+
+                     </a>
+                 </div>
+
+
+
+                 <div class="ui-block-b" style="width: 4px;">
+                     <img src="images/separador.png">
+
+
+                 </div>
+
+                 <!--<div class="ui-block-c" id="btnMapasGoogle" style="margin-left: 7.5%;margin-right: 7.5%;">
+                     <a class="CategoriasHome" href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image138','','images/btnubicacionchange.png',1)">
+                         <img id="Image138" src="images/ubicacion.png" style="width:60px;height:60px;">
+                         <h3 style="width: 60px;">MAPA</h3>
+                     </a>
+                 </div>-->
+
+                 <div class="ui-block-c" id="btnPatrocinador" style="margin-left: 7.5%;margin-right: 7.5%;">
+                     <a class="CategoriasHome" href="#Patrocinador" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image138','','images/btntigochange.png',1)">
+                         <img id="Image138" src="images/tigo.png" style="width:60px;height:60px;">
+                         <h3 style="width: 60px;">TIGO</h3>
+                     </a>
+                 </div>
+
+                 <div class="ui-block-d" style="width: 4px;">
+                     <img src="images/separador.png">
+                 </div>
+
+                 <div id="btnContacto" class="ui-block-e" style="margin-left: 7.5%;">
+                     <a class="CategoriasHome" href="#Contacto" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contacto','','images/btncontactochange.png',1)">
+                         <img src="images/contacto.png" style="width:67px;height:60px;" id="contacto">
+                         <h3 style="width: 67px;">CONTACTO</h3>
+                     </a>
+                 </div>
+                 <!--Fin Tercera Fila-->
+
+
+             </div>
+
+
+
+         </ul>
+  </div>
+
+    <div align="center">
+        <a id="enlaceweb"><img style="margin-right:8px;" src="images/websitebtn.png"/></a>
+        <a id='enlacefb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
+        <a id='enlacetw'><img style="margin-right:8px;" src="images/twbtn.png"/></a>
+        <a id='enlacepin'><img style="margin-right:8px;" src="images/pinbtn.png"/></a>
+        <a id='enlaceinstab'><img src="images/instabtn.png"/></a>
+    </div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioHome" ><a class="test"   href=""><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+               <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin home-->
+
+<!--Home Proximamente-->
+<div data-role="page" id="Home1" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+        <a data-role="button" id="btnCambiarUbicacion1"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+        </a>
+        <img id="imgHeaderHome1" src="" width="388" height="137" >
+        <p/>
+
+
+
+    </div>
+    <img id="imgProximamente" style="margin-top:30px; margin-left:10px;" src="">
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href=""><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="" ><a class="test" ><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                <li><a href="#About1" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--Fin Home Proximamente-->
+
+<!--inicio Cines-->
+
+
+<div data-role="page" id="Cines"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	    <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left " style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+              <img src="images/btnback.png">
+        </a>
+    <img src="images/cine/cineheader.png">
+
+	<p/>
+</div>
+
+
+<iframe id="FrameMovies" width="100%" frameborder="0" height=418>
+
+</iframe>
+
+
+
+
+
+
+
+
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioCine" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+<!--fin cines-->
+
+
+<!--inicio Ofertas-->
+
+
+<div data-role="page" id="Ofertas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top: 5px;padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+        <img src="images/btnback.png">
+  </a>
+    <img src="images/ofertas/headerofertas.png">
+
+	<p/>
+</div>
+
+
+
+
+
+
+
+
+
+            <ul data-role="listview" id="ListDeals">
+
+
+
+
+          </ul>
+
+
+
+
+
+
+
+
+
+
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioOfertas" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+
+<!--fin ofertas-->
+
+<!--Tiendas-->
+<div data-role="page" id="Tiendas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href="#Home" class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+               <img src="images/btnback.png">
+  </a>
+    <img src="images/tiendas/headertiendas.png">
+
+	<p/>
+</div>
+
+
+
+
+     <div class="content" id="results">
+         <ul class="ui-grid-a " id="listCategoriesStores"  style="
+                                        padding-left: 10px;
+                                        padding-right: 10px;">
+         </ul>
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+<div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioTiendas" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+
+
+
+
+</div>
+
+<!--fin Tiendas-->
+
+<!--Tiendas Categorias-->
+
+<div data-role="page" id="TiendasCategorias" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+<div data-role="header" data-position="fixed" >
+	 <a data-role="button" href="#Tiendas"  class="BotonBackBorde ui-btn-left" style=" margin-top: 5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none; ">
+               <img src="images/btnback.png">
+    </a>
+	<div>
+        <img id="imgHeaderDeals" src="">
+
+    </div>
+
+	<p/>
+</div>
+
+
+   <div data-role="content">
+                <ul class="list" id="listCategoriesStoresSelected" data-role="listview" data-theme="c" data-inset="true" style="
+    margin-top: -14px;">
+
+
+                </ul>
+   </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioTiendasCategorias" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--Fin Tiendas Categorias-->
+
+
+<!--Tienda Seleccionada-->
+<div data-role="page" id="StoreSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+
+        <a data-role="button" href="#TiendasCategorias"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+
+
+        </a>
+
+        <img src="images/tiendas/headerbancos2.png" width="388" height="137">
+
+        <p/>
+    </div>
+    <div data-role="content">
+        <ul class="list" data-role="listview" id="ulListStoreSelected"  data-inset="true" style="
+                margin-top: -14px;">
+
+            <div style="
+                    padding-bottom: 5px;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                    margin-top:0px;
+                    ">
+
+                <!--<div align="justify" >-->
+                <!--<strong id="txtAddress">Address</strong>-->
+                <!--</div>-->
+                <div class="ui-grid-a">
+
+                    <div class="ui-block-a">
+                        <img  width="50px" height="50px" id="imgStoreSelected" src="images/btnnContactoChange.png"/>
+                        <h1 id="txtName">Nombre</h1>
+                    </div>
+
+                    <div align="justify"  class="ui-block-b">
+                        <strong id="txtAddress"></strong>
+                    </div>
+                </div>
+
+
+
+                <img src="images/tiendas/separador2.png" width="305" height="2"  alt=""/>
+
+                <h1>Descripción</h1>
+                <div align="justify" id="txtDescription" style="margin-right: 20px;">
+
+                </div>
+
+            </div>
+        </ul>
+        <div align="center">
+            <a id="storeSelectedPageWeb"><img style="margin-right:8px;" src="images/websitebtn.png"/></a>
+            <a id='storeSelectedLinkfb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
+            <a id='storeSelectedLinktw'><img style="margin-right:8px;" src="images/twbtn.png"/></a>
+            <a id='storeSelectedLinkpin'><img style="margin-right:8px;" src="images/pinbtn.png"/></a>
+            <a id='storeSelectedLinkinstab'><img src="images/instabtn.png"/></a>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioStoredSelected" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+</div>
+
+<!--Fin Tienda Seleccionada-->
+
+<!--inicio parqueo-->
+
+<div data-role="page" id="Parqueo" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+<div data-role="header" data-position="fixed" >
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+    </a>
+    <img src="images/headerparqueo.png" width="388" height="137" >
+	<p/>
+
+
+
+</div>
+    <img style="margin-top:0px; margin-left:5%;" src="images/estacionamientoinfo.png">
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioParqueo" ><a class="test" ><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin parqueo-->
+
+<!--inicio tigo-->
+
+<div data-role="page" id="Patrocinador" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px; /*background: white;*/ background-image: url(images/Fondo2.png);">
+
+    <div data-role="header" data-position="fixed" >
+        <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+        </a>
+        <img src="images/headerTIGO.png" width="388" height="137" />
+        <p/>
+    </div>
+    <div data-role="content" style="margin-top: 15%">
+        <img id="imgPublicidad" src="">
+        <br/>
+        <div align="center">
+            <a id="sponsorPageWeb"><img style="margin-right:8px;" src="images/Tigo_Smarthphones.png"/></a>
+            <a id='sponsorLinkfb'><img style="margin-right:8px;" src="images/Tigo_Market.png"/></a>
+            <a id='sponsorLinktw'><img style="margin-right:8px;" src="images/Tigo_Music.png"/></a>
+            <a id='sponsorLinkpin'><img style="margin-right:8px;" src="images/Tigo_Paquetigos.png"/></a>
+            <a id='sponsorLinkinstab'><img src="images/Tigo_Money.png"/></a>
+        </div>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li>
+                    <a href="#Buscar">
+                        <img style="height: 53px;" src="images/btnbuscar.png"/>
+                    </a>
+                </li>
+                <li id="btnInicioPatrocinador" >
+                    <a class="test" >
+                        <img style="height: 53px;" src="images/inicio2-01.png"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#About" class="ui-btn-active ui-state-persist">
+                        <img style="height: 53px;" src="images/btnconfig.png"/>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+</div>
+
+<!--fin tigo-->
+
+<!--inicio eventos-->
+<div data-role="page" id="Eventos" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+
+	<a data-role="button" href="#Home" class=" BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+         <img src="images/btnback.png">
+    </a>
+
+    <img src="images/eventos/headereventos.png" width="388" height="137" >
+	<p/>
+</div>
+    <div>
+        <div id="calendar" style="margin-left: 10px; margin-right: 10px;">
+
+        </div>
+        <!--<a id= "btnLlamarSabado" >-->
+            <!--<img src="images/eventos/calendar.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px">-->
+        <!--</a>-->
+    </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioEventos" ><a class="test" ><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin eventos-->
+
+<!--inicio sabado 21-->
+<div data-role="page" id="EventSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Eventos"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+             <img src="images/btnback.png">
+    </a>
+
+    <img src="images/eventos/headereventos2.png" width="388" height="137" >
+	<p/>
+</div>
+    <div data-role="content" id="InformationEvents">
+
+
+        <h3 id="dateSelected"></h3>
+        <ul data-role="listview" id="ListEvents">
+
+
+
+        </ul>
+
+    </div>
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioEventoSeleccionado" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin sabado 21-->
+
+<!-- inicio mapas-->
+<div data-role="page" id="Mapas" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+               <img src="images/btnback.png">
+    </a>
+
+    <img src="images/headerdirectorio.png" width="388" height="137" >
+	<p/>
+</div>
+
+    <div class="content" id="levelsResults">
+        <ul class="ui-grid-a " id="listLevelsMall"  style="
+                                        padding-left: 10px;
+                                        padding-right: 10px;">
+        </ul>
+
+
+
+    </div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioMapa" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+<!-- fin mapas-->
+
+<!-- inicio mapas-->
+<div data-role="page" id="MapSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+
+        <a data-role="button" href="#Mapas"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+        </a>
+
+        <img src="images/headerdirectorio.png" width="388" height="137" >
+        <p/>
+    </div>
+
+    <div>
+       <img id="imgMapSelected" src="">
+
+
+
+    </div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioMapSelected" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+<!-- fin mapas-->
+
+<!-- inicio comidas-->
+
+
+<div data-role="page" id="Comidas" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px;padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+               <img src="images/btnback.png">
+
+    </a>
+
+    <img src="images/comidas/headercomidas.png" width="388" height="137" >
+	<p/>
+</div>
+    <div data-role="content">
+
+        <ul data-role="listview" id="listFood">
+
+
+
+
+        </ul>
+
+        <!--<ul class="list" style="margin-top: -14px;" id="listFood" data-role="listview" data-theme="c" data-inset="true">-->
+
+
+        <!--</ul>-->
+    </div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioFood" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+<!-- fin comidas -->
+
+<!--Comida Seleccionada-->
+<div data-role="page" id="foodSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+
+
+        <a data-role="button" href="#Comidas"  class="BotonBackBorde ui-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+
+        </a>
+
+
+        <img src="images/comidas/headercomidas2.png" width="388" height="137"/>
+        <p/>
+    </div>
+    <div data-role="content">
+        <ul class="list" data-role="listview" id="ulListfoodSelected"  data-inset="true" style="
+    		margin-top: -14px;">
+
+            <div style="
+                padding-bottom: 5px;
+                padding-left: 20px;
+                padding-top: 20px;
+                margin-top:0px;
+                ">
+
+
+
+                <div class="ui-grid-a">
+
+                    <div class="ui-block-a">
+                        <img  width="50px" height="50px" id="imgFoodSelected" src="images/btnnContactoChange.png"/>
+                        <h1 id="txtFoodName">Name</h1>
+                    </div>
+
+                    <div align="justify"  class="ui-block-b">
+                        <strong id="txtFoodAddress"></strong>
+                    </div>
+                </div>
+
+
+
+                <img src="images/tiendas/separador2.png" width="305" height="2"  alt=""/>
+
+                <h1>Descripción</h1>
+                <div align="justify" id="txtFoodDescription" style="
+   			 margin-right: 20px;
+				"></div>
+
+            </div>
+        </ul>
+
+            <div align="center">
+                <a id="foodSelectedPageWeb"><img style="margin-right:8px;" src="images/websitebtn.png"/></a>
+                <a id='foodSelectedLinkfb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
+                <a id='foodSelectedLinktw'><img style="margin-right:8px;" src="images/twbtn.png"/></a>
+                <a id='foodSelectedLinkpin'><img style="margin-right:8px;" src="images/pinbtn.png"/></a>
+                <a id='foodSelectedLinkinstab'><img src="images/instabtn.png"/></a>
+            </div>
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+
+                <div data-role="navbar">
+                    <ul>
+
+                        <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                        <li id="btnInicioFoodSelected" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                        <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+                    </ul>
+
+
+
+                </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+
+</div>
+
+<!--Fin Tienda Seleccionada-->
+
+<!-- inicio about-->
+
+
+<div data-role="page" id="About" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+             <img src="images/btnback.png">
+    </a>
+
+    <img src="images/headerabout.png" width="388" height="137" >
+	<p/>
+</div>
+    <div> <img src="images/logosabout.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </div>
+		<p/>
+	  <div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
+         <div>
+               <h2 id="numeroVersion"></h2>
+
+                 <p>Grupo Leitz ® 2014</p>
+				 <span></span>
+               <h2>Teléfono:</h2>
+                 <p>(504) 2561-3288</p>
+				 <p>(504) 2561-3502</p>
+                <p></p>
+                <h2> Correo Información sobre desarrollos de aplicaciones:</h2>
+                 <p> <a href="mailto:info@grupoleitz.com?subject=Información">info@grupoleitz.com</a></p>
+
+
+
+
+		 </div>
+
+         <div class="ui-grid-a" style="margin-top:20px;">
+         <div class="ui-block-a">
+         <a href="#" onclick="window.open('https://itunes.apple.com/hn/app/promo2go/id748565884?mt=8','_system')"><img src="images/andriod and ios/appstore.png"></a>
+         </div>
+         <div class="ui-block-b">
+         <a href="#" onclick="window.open('https://play.google.com/store/apps/details?id=com.grupoleitz.promo2go&hl=es-419','_system')"><img src="images/andriod and ios/playstore.png"></a>
+         </div>
+
+         </div>
+
+
+
+
+	  </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioAbout" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+<!--fin about-->
+
+<!-- inicio about1-->
+
+
+<div data-role="page" id="About1" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+
+        <a data-role="button" href="#Home1"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+        </a>
+
+        <img src="images/headerabout.png" width="388" height="137" >
+        <p/>
+    </div>
+    <div> <img src="images/logosabout.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </div>
+    <p/>
+    <div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
+        <div>
+            <h2 id="numeroVersion"></h2>
+
+            <p>Grupo Leitz ® 2014</p>
+            <span></span>
+            <h2>Teléfono:</h2>
+            <p>(504) 2561-3288</p>
+            <p>(504) 2561-3502</p>
+            <p></p>
+            <h2> Correo Información sobre desarrollos de aplicaciones:</h2>
+            <p> <a href="mailto:info@grupoleitz.com?subject=Información">info@grupoleitz.com</a></p>
+
+
+
+
+        </div>
+
+        <div class="ui-grid-a" style="margin-top:20px;">
+            <div class="ui-block-a">
+                <a href="#" onclick="window.open('https://itunes.apple.com/hn/app/promo2go/id748565884?mt=8','_system')"><img src="images/andriod and ios/appstore.png"></a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" onclick="window.open('https://play.google.com/store/apps/details?id=com.grupoleitz.promo2go&hl=es-419','_system')"><img src="images/andriod and ios/playstore.png"></a>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href=""><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioAbout1" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                <li><a href="#About1" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+
+
+<!--fin about1-->
+
+
+<!--inicio contacto-->
+
+<div data-role="page" id="Contacto" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+<div data-role="header" data-position="fixed" >
+
+	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+             <img src="images/btnback.png">
+    </a>
+
+    <img src="images/headercontacto.png" width="388" height="137" >
+	<p/>
+</div>
+
+<div>
+<!--<img src="images/contactosac.png" style=" margin-left:5px; padding-left: 5%; padding-right: 5%; margin-top:0px"> -->
+
+<div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
+         <div>
+               <h2 id="numeroVersion"></h2>
+
+                 <p><h2><strong id="txtContactoTitulo"></strong></h2></p>
+                 <p id="txtContactoDescripcion"></p>
+                 <!--<p>San Pedro Sula, Honduras</p>-->
+                 <br/>
+                 <br/>
+				 <span></span>
+                 <span></span>
+
+                 <div class="ui-grid-d"">
+                 	<div class="ui-block-a">
+                    <img id="imgContactoPhone" src=""/>
+				 	</div>
+                    <div class="ui-block-b" style="width: 55%;">
+                     <p id="txtContactoTelefono" style="text-align:left;"></p>
+				 	  </div>
+
+                      <div class="ui-block-a">
+                      <img id="imgContactoFB" src=""/>
+                      </div>
+
+                      <div class="ui-block-b" style="width: 70%;">
+                       <p style="text-align:left;"><a id="txtContactoFB" href=""></a></p>
+                       </div>
+
+                        <div class="ui-block-a" >
+                      <img id="imgContactoMail" src=""/>
+                      </div>
+
+                      <div class="ui-block-b">
+                      <p style="text-align:left;"> <a id="txtContatoMail" href=""></a></p>
+                       </div>
+
+
+                 </div>
+
+
+
+
+
+
+
+		 </div>
+
+
+
+
+	  </div>
+</div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href="#Buscar"><img style="
+    height: 53px;" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioContacto" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                   <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin contacto-->
+
+
+
+<!--inicio BUSCAR-->
+
+<div data-role="page" id="Buscar" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
+
+
+
+
+
+
+    <div data-role="header" data-position="fixed" >
+
+        <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+            <img src="images/btnback.png">
+        </a>
+
+        <img src="images/headerbuscar.png" width="388" height="137" >
+        <p/>
+    </div>
+
+    <div data-role="content" style="
+    margin-top: -32px;
+">
+
+
+
+        <div data-role="fieldcontain">
+            <!--<label for="name">Ingrese palabra clave:</label>-->
+            <div class="ui-grid-a" style="margin-bottom: 10px;">
+                <div class="ui-block-a" style="
+    width: 80%;
+"   >
+                    <input type="text" name="txtSearch" placeholder="Buscar..." id="txtSearch" value="" style="
+    margin-top: 5%;
+" />
+                </div>
+
+                <div class="ui-block-b cssbtnSearch"  style="width: 19%;">
+                    <button data-icon="search" id="btnSearch" > </button>
+                </div>
+
+            </div>
+
+
+            <div>
+               
+                <ul style="margin-top: 0px;" data-role="listview" id="ulEventos" class="list" data-inset="true">
+
+
+
+                </ul>
+
+            </div>
+
+            <div>
+            <ul style="margin-top: 0px;" data-role="listview" id="ulOfertas" class="list" data-inset="true">
+
+             
+                
+
+
+
+                </ul>
+            </div>
+
+            <div>
+          
+           
+           
+                <ul  data-role="listview" id="ulTiendas" style="margin-top: 0px;" class="list" data-inset="true">
+
+
+
+                </ul>
+            </div>
+
+            <div>
+                
+                <ul data-role="listview" id="ulComidas" style="margin-top: 0px;" class="list" data-inset="true">
+
+
+
+                </ul>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+
+                <li><a href=""><img style="
+    height: 53px;
+" src="images/btnbuscar.png"/></a></li>
+                <li id="btnInicioBuscar" ><a class="test"><img style="
+    height: 53px;
+" src="images/inicio2-01.png"/></a></li>
+
+                <li><a href="#About" class="ui-btn-active ui-state-persist"><img style="
+    height: 53px;
+" src="images/btnconfig.png"/></a></li>
+
+
+            </ul>
+
+
+
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+
+
+
+
+</div>
+<!--fin BUSCAR-->
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+/*** general styling */
+.ui-page.ui-body-c{
+background: url(../../../images/fondoazul-01.png););
+box-shadow:  0px 0px 30px 5px rgba(107, 105, 105, 0.3) inset,
+ 0px 0px 0px 1px rgba(107, 105, 105, 0.4) inset;
+
+}
+
+
+@font-face {
+    font-family: roboto;
+    src: url(../../../roboto/Roboto-Regular.ttf);
+}
+
+
+.test .ui-btn-inner {
+	
+	background-color: #0A4EBB !important;
+	
+	}
+
+#results .ui-btn{
+
+border-radius: 7px !important;
+}
+
+#btninicio span{
+	background-color: #27B1E8 !important; 
+}
+
+.cssbtnSearch span{
+    height: 15px; !important;
+
+    margin-top: 10px;
+
+
+}
+
+/*#btnCambiarUbicacion span{*/
+	/*border-top: none;*/
+	 /*padding-right: 0px;*/
+	/*}*/
+
+/*#btnRegresarHome span{*/
+	/*border-top: none;*/
+	 /*padding-right: 0px;*/
+	/*}*/
+
+.BotonBackBorde span{
+    border-top: none !important;
+    padding-right: 0px !important;
+}
+
+
+
+.ui-icon.ui-icon-arrow-r {
+background-color:#98C942;
+}
+.ui-corner-all, 
+.ui-corner-top,
+.ui-corner-bottom,
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-bl,	
+.ui-header .ui-btn-corner-all,
+.ui-listview-filter .ui-btn-corner-all,
+#restau_infos .ui-btn-corner-all,
+#contact_buttons .ui-btn-corner-all,
+#notation .ui-btn-corner-all{
+border-radius:0.6em;
+}
+
+.ui-btn-active {
+background: #007ABC; /* Old browsers */
+
+color:#fff !important;
+}
+.ui-content .choice_list  .ui-btn-active .ui-link-inherit,
+.ui-btn-down-c a.ui-link-inherit,
+#home .ui-btn-down-c a.ui-link-inherit{
+color:#fff !important;
+}
+
+
+.imgSmall{
+max-width: auto;
+height: 65%; width: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+img{
+max-width: 100%;
+height: auto; width: auto;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b {
+    width: 50%;
+    padding:0%;
+}
+
+
+/* title bar */
+.ui-header.ui-bar-a{
+background:url(images/header_bg.png);
+border: 0; 
+/*background:#61cae9;*/ /*<--- Fondo de la barra de titulo de la app*/
+}
+.ui-header .ui-title {
+text-indent:0px;
+font-size:16px;
+/*background:url(images/header_logo1.png) no-repeat 69% 5px ;*/
+/*height:33px;*/
+height:28px;/*<--- Altura de la barra de titulo*/
+padding:5px 0 5px 50px;
+margin:0px;
+text-align:center;
+margin-top:4px
+}
+
+.ui-header  .ui-btn-up-a  {
+background:transparent;
+box-shadow:none;
+}
+.ui-header  .ui-btn-hover-a {
+background:rgba(0, 0, 0, 0.3);
+box-shadow:none;
+}
+
+
+
+
+/*** home **/
+
+#branding{
+background:url(images/logo.png) no-repeat;
+width:322px;
+height:165px;
+text-indent:-999px;
+font-size:0px;
+margin:-10px auto 0 auto;
+border-bottom:1px solid rgba(65, 38, 37, 0.6);
+}
+
+.choice_list h1{
+margin-top:30px;
+font-size:18px;
+color:rgb(65, 38, 37);
+font-weight:normal;
+font-style:italic;
+padding:5px 0 6px 50px;
+background:url(images/pagination1.png) no-repeat;
+}
+
+#home .choice_list h1{
+background-position: 0 -16px;
+}
+#home .choice_list  h3{
+padding-top:10px;
+/*color:rgb(63, 41, 39);*//*Cafe*/
+/*color:rgb(140, 198, 62);*//*Verde Claro*/
+/*color:rgb(140, 94, 29);*//*Anaranjado*/
+/*color:rgb(26, 64, 102);*//*Azul*/
+color:rgb(202, 57, 45);/*Gris*/ /*<--- Color de la letra de lista de Categorias*/
+}
+#home .choice_list .ui-btn-active  a.ui-link-inherit h3{
+color:#fff;
+}
+.choice_list  img{
+padding:3px;
+}
+
+.CategoriasLink
+{	
+  text-decoration: none;
+  cursor: auto;
+  color: rgb(49, 49, 49) !important;
+  font-size: 12px !important;
+  font-family: roboto;
+  text-shadow: none; 
+  text-align: center;
+}
+
+.CategoriasHome h3
+{
+    text-decoration: none;
+    cursor: auto;
+    color: rgb(255, 255, 255) !important;
+    font-size: 10px !important;
+    font-family: roboto;
+    text-shadow: none;
+    text-align: center;
+}
+
+.PromocionesLink
+{	
+  text-decoration: none;
+  cursor: auto;
+  color: white;
+  font-size: 9px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-shadow: none; 
+  text-align: center;
+  
+}
+
+.NombrePromociones
+{
+	
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.imagenPromo
+{
+	margin-top: 1px;
+}
+
+/** Chose the town **/
+
+#choisir_ville .choice_list h1{
+background-position: 0 -72px;
+margin-bottom:20px;
+}
+#choisir_ville .choice_list a{
+padding-top:10px;
+color:rgb(63, 41, 39);
+}
+#choisir_ville .ui-listview-filter a{
+padding-top:0px;
+}
+
+
+/** choix du restaurant **/
+#choisir_restau .choice_list h1{
+background-position: 0 -132px;
+margin:10px auto 20px auto;
+}
+#choisir_restau .choice_list a{
+padding-top:10px;
+color:white;
+text-shadow:none;
+/*color:rgb(140, 198, 62);*//*<--- Color de la letra de lista de las Promos de cada Categoria*/
+}
+
+#choisir_restau .classement{
+/*display:inline-bloc;
+
+background:url(images/pagination1.png) no-repeat  0 -182px;
+height:25px;
+text-indent:-999px;
+font-size:0px;
+margin:auto;
+
+margin-top:-10px;
+padding-top:15px;*/
+}
+
+#choisir_restau .classement1{
+display:inline-bloc;
+background:url(images/paginacion2b.png) no-repeat  0 -182px;
+height:25px;
+text-indent:-999px;
+font-size:0px;
+margin:auto;
+margin-top:-10px;
+padding-top:15px;
+}
+
+
+
+#choisir_restau .zero{
+width:152px;
+}
+
+#choisir_restau .one{
+	background:url(images/stars/1_Un_estrella.png) no-repeat  0
+
+}
+#choisir_restau .two{
+width:68px;
+}
+#choisir_restau .three{
+width:90px;
+}
+#choisir_restau .four{
+background:url(images/stars/1_Un_estrella.png) no-repeat  0
+}
+#choisir_restau .five{
+width:152px;
+}
+
+
+/** restau **/
+#restau_infos,
+#contact_infos {
+color:black;
+font-size:14px;
+text-shadow:none;
+}
+#restau_infos h1,
+#contact_infos h2{
+color:#244C86;
+font-size:14px;
+text-shadow:none;
+margin:0 auto 5px auto;
+}
+
+#notation h2{
+color:#98C942;
+font-size:15px;
+text-shadow:none;
+margin:0 auto 5px auto;
+}
+
+#restau_infos p,
+#restau_infos ul,
+#contact_infos p{
+margin:2px auto 5px auto;
+}
+#restau_infos ul{
+padding:0 0 0 10px;
+}
+#restau_infos ul  li{
+list-style-type:square;
+margin-left:5px;
+}
+
+#restau_infos .ui-block-b .ui-btn {
+font-size:12px;
+}
+#restau_infos .ui-block-b .ui-btn-inner{
+padding:5px;
+}
+
+#contact_buttons a{
+color:rgb(63, 41, 39);
+/*color:rgb(140, 198, 62);*//*<--- Color de la letra del boton de Favorito*/
+}
+
+.ui-icon-maps {
+background: rgb(63, 41, 39) url(images/maps.png) no-repeat;
+}
+.ui-icon-tel{
+background: rgb(63, 41, 39) url(images/phone.png) no-repeat;
+}
+
+/** add the stars to the drop down */
+#note_utilisateur-menu a{
+padding-left:150px; /*<--- Mover posicion del texto del rating en el menu*/
+position:relative;
+}
+
+#note_utilisateur-button span.ui-btn-text{
+background:url(images/pagination.png) no-repeat;
+} 
+
+#note_utilisateur-button span.ui-btn-inner{
+	padding-left:5px;
+} 
+
+#note_utilisateur-menu li a:before{
+content: "   ";
+display:inline-block;
+width:152px;
+height:50px;
+background:url(images/pagination.png) no-repeat;
+position:absolute;
+left:0px;
+}
+.one #note_utilisateur-button span.ui-btn-text,
+#note_utilisateur-menu li a:before{
+background-position: -113px -189px;
+padding-left:85px; /*<--- Mover posicion del texto del rating en el boton*/
+}
+.two #note_utilisateur-button span.ui-btn-text,
+#note_utilisateur-menu li + li a:before{
+background-position: -90px -189px;
+padding-left:85px; /*<--- Mover posicion del texto del rating en el boton*/
+}
+.three #note_utilisateur-button span.ui-btn-text,
+#note_utilisateur-menu li + li +li a:before{
+background-position: -65px -189px;
+padding-left:85px; /*<--- Mover posicion del texto del rating en el boton*/
+}
+.four #note_utilisateur-button span.ui-btn-text,
+#note_utilisateur-menu li + li +li +li a:before{
+background-position: -38px -189px;
+padding-left:85px; /*<--- Mover posicion del texto del rating en el boton*/
+}
+
+.five #note_utilisateur-button span.ui-btn-text,
+#note_utilisateur-menu li + li +li +li +li a:before{
+/*background-position: -40px -187px;*/
+background-position: -10px -189px;
+padding-left:95px; /*<--- Mover posicion del texto del rating en el boton*/
+
+}
+
+
