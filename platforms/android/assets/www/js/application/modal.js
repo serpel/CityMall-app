@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var urlGlobal = 'https://www.leitzbook.com/citymallservices/CityMallAppServices.svc/';//'http://citymallservices.dc.grupoleitz.com/CityMallAppServices.svc/';
+var urlGlobal = 'https://www.leitzbook.com/citymallservicestest/CityMallAppServices.svc/';//'https://www.leitzbook.com/citymallservicestest/CityMallAppServices.svc/';
 
 var idMallGlobal;
 
