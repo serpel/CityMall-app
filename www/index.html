@@ -59,6 +59,11 @@ a {
 my-footer {
 	background-color: #002a3c !important;
 }
+
+hr { 
+    border-width: 5px;
+	width: inherit;
+}
 </style>
 
 
@@ -71,9 +76,19 @@ my-footer {
     <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="PushNotification.js"></script>
-    <script src="js/jquery.js"></script>
+    
+	<!-- Old Jquery version -->
+	<script src="js/jquery.js"></script>
     <script src="js/jquery-ui.custom.min.js"></script>
     <script src="js/jquery.mobile-1.2.1.js"></script>
+	
+	
+	<!-- New Jquery version
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	-->
+
     <!--<script src="js/jquery.min.js"></script>-->
     <!--<script src="js/jquery-ui.custom.min.js"></script>-->
     <!--<script src="js/jquery.mobile-1.2.1.js"></script>-->
@@ -111,7 +126,7 @@ my-footer {
 
 <!--inicio home-->
 <div data-role="page" id="index" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: url(images/fondo.png) ;background-position: initial initial;
-background-repeat: initial initial; padding-top: 10px;">
+background-repeat: initial initial; padding-top: 10px; position:relative">
 
 	<div data-role="content" style="padding-bottom: 0px;">
 		<div>
@@ -121,6 +136,7 @@ background-repeat: initial initial; padding-top: 10px;">
 	<div>
 	  <ul class="ui-grid-solo" id="listIndex" style="padding-left: 0px; margin-bottom:20px;"></ul>
 	</div>
+	<hr color="#F79218" style="position:fixed;bottom:0px;">
 </div>
 
 <div class="ui-popup-container ui-popup-hidden" id="popupCloseRight-popup">
@@ -135,7 +151,7 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--inicio home-->
 <div data-role="page" id="Home" data-theme="c">
 
-<div data-role="header" data-position="fixed" >
+<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
 	 <a data-role="button" href=""  id="btnCambiarUbicacion" class="BotonBackBorde ui-btn-left" style=" color:white; margin-top:5px;  padding-top: 0px; border: 0px;text-shadow: none;">
               <img src="images/btnback.png">
     </a>
@@ -152,7 +168,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div class="ui-block-e" id="btnOfertas" style="padding-bottom: 20px;margin-right: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image89','','images/btnOfertasChange.png',1)">
                          <img src="images/btnOfertas.png" id="Image89">
-                         <h3>OFERTAS</h3>
+                         <div color="#000000">OFERTAS</div>
                      </a>
                  </div>
 
@@ -236,12 +252,13 @@ background-repeat: initial initial; padding-top: 10px;">
          </ul>
   </div>
 
-    <div align="center">
-        <a id='enlacefb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
-        <a id='enlacetw'><img style="margin-right:8px;" src="images/btntw.png"/></a>		
-		<a id='enlaceinstab'><img style="margin-right:8px;" src="images/btninsta.png"/></a>
-        <a id='enlaceweb'><img style="margin-right:8px;" src="images/btnyt.png"/></a>
-    </div>
+    <div align="center" >
+			<div style="color: #fff300; font-size=14px; float:left; padding-top: 6px; padding-left: 10px;"> Visítanos Desde: </div>
+			<a id='enlacefb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
+			<a id='enlacetw'><img style="margin-right:8px;" src="images/btntw.png"/></a>		
+			<a id='enlaceinstab'><img style="margin-right:8px;" src="images/btninsta.png"/></a>
+			<a id='enlaceweb'><img style="margin-right:8px;" src="images/btnyt.png"/></a>
+		</div>
 
     <div data-role="footer" data-id="foo1" data-position="fixed" class='my-footer'> 
         <div data-role="navbar">

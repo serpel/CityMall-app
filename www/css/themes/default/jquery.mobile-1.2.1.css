@@ -719,7 +719,7 @@ a.ui-link-inherit {
 /* Active class used as the "on" state across all themes
 -----------------------------------------------------------------------------------------------------------*/
 .ui-btn-active {
-	border: 1px solid 		#2373a5 /*{global-active-border}*/;
+	border: 1px solid 		#000000 /*{global-active-border}*/;
 	background: 			#5393c5 /*{global-active-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{global-active-color}*/;
@@ -1813,7 +1813,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-footer .ui-navbar .ui-grid-c li.ui-block-d .ui-btn-icon-right .ui-icon,
 .ui-header .ui-navbar .ui-grid-d li.ui-block-e .ui-btn-icon-right .ui-icon,
 .ui-footer .ui-navbar .ui-grid-d li.ui-block-e .ui-btn-icon-right .ui-icon { right: 8px; }
-.ui-navbar li .ui-btn .ui-btn-inner { background-color: #0A4EBB; padding-top: .7em; padding-bottom: .8em  }
+.ui-navbar li .ui-btn .ui-btn-inner { background-color: #002839; padding-top: .7em; padding-bottom: .8em  }
 .ui-navbar li .ui-btn-icon-top .ui-btn-inner { padding-top: 30px; }
 .ui-navbar li .ui-btn-icon-bottom .ui-btn-inner { padding-bottom: 30px; }
 .ui-btn { display: block; text-align: center; cursor:pointer; position: relative; margin: .5em 0; padding: 0; }
