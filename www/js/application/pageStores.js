@@ -79,7 +79,7 @@ function createListStores(data){
 
                 button = jQuery('<button class="ui-btn-hidden" aria-disabled="false"/>');
 
-                button.attr('value',data[i].Id).attr('onclick','getStoresSelected(this)').attr('imgHeaderDealsSelected',data[i].ImagenEncabezado).text(data[i].Nombre);
+                button.attr('value',data[i].Id).attr('onclick','getStoresSelected(this)').attr('imgHeaderDealsSelected',data[i].ImagenEncabezado).attr('textCategory',data[i].Nombre).text(data[i].Nombre);
 
                 div2.append(span1);
                 div2.append(button);
@@ -89,8 +89,6 @@ function createListStores(data){
                 $('#listCategoriesStores').listview('refresh',true);
             }
             //ul.listview('refresh');
-
-
 
         }
     }
@@ -117,9 +115,11 @@ function getStoresSelected(id){
     });
 
 
-    var img = document.getElementById('imgHeaderDeals');
-    img.src   = 'data:image/jpeg;base64,'+ $(id).attr('imgHeaderDealsSelected');
-
+  //  var img = document.getElementById('imgHeaderDeals');
+  //  img.src   = 'data:image/jpeg;base64,'+ $(id).attr('imgHeaderDealsSelected');
+	
+	var dd = document.getElementById('categoryNameStore');
+	dd.innerText = $(id).attr('textCategory');
 
     setTimeout(function(){
 

@@ -59,6 +59,74 @@ a {
 my-footer {
 	background-color: #002a3c !important;
 }
+
+hr { 
+    border-width: 5px;
+	width: inherit;
+}
+
+h6 {
+	color: #ffffff;
+}
+
+#divV {
+	font-size: 18px;
+	font: menu;
+	font-weight: bold;
+}
+
+.customHeader {
+	position: absolute;
+	width: 90%;
+	z-index: -100;
+}
+
+.customButton {
+	top: 0;
+    bottom: 0;
+	position: relative;
+}
+
+.customLogo{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.customLogo2{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.headerText1{
+	padding-left: 65px;
+	font-size: 8px;
+}
+
+.headerText2{
+	padding-left: 65px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.headerText3{
+	padding-left: 65px;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+}
+
+.headerText4{
+	padding-left: 25px;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+}
+
+#headerCategory{
+	height: 100px;
+}
 </style>
 
 
@@ -71,9 +139,19 @@ my-footer {
     <!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" src="PushNotification.js"></script>
-    <script src="js/jquery.js"></script>
+    
+	<!-- Old Jquery version -->
+	<script src="js/jquery.js"></script>
     <script src="js/jquery-ui.custom.min.js"></script>
     <script src="js/jquery.mobile-1.2.1.js"></script>
+	
+	
+	<!-- New Jquery version
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	-->
+
     <!--<script src="js/jquery.min.js"></script>-->
     <!--<script src="js/jquery-ui.custom.min.js"></script>-->
     <!--<script src="js/jquery.mobile-1.2.1.js"></script>-->
@@ -111,7 +189,7 @@ my-footer {
 
 <!--inicio home-->
 <div data-role="page" id="index" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: url(images/fondo.png) ;background-position: initial initial;
-background-repeat: initial initial; padding-top: 10px;">
+background-repeat: initial initial; padding-top: 10px; position:relative">
 
 	<div data-role="content" style="padding-bottom: 0px;">
 		<div>
@@ -121,6 +199,7 @@ background-repeat: initial initial; padding-top: 10px;">
 	<div>
 	  <ul class="ui-grid-solo" id="listIndex" style="padding-left: 0px; margin-bottom:20px;"></ul>
 	</div>
+	<hr color="#F79218" style="position:fixed;bottom:0px;">
 </div>
 
 <div class="ui-popup-container ui-popup-hidden" id="popupCloseRight-popup">
@@ -135,16 +214,25 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--inicio home-->
 <div data-role="page" id="Home" data-theme="c">
 
-<div data-role="header" data-position="fixed" >
-	 <a data-role="button" href=""  id="btnCambiarUbicacion" class="BotonBackBorde ui-btn-left" style=" color:white; margin-top:5px;  padding-top: 0px; border: 0px;text-shadow: none;">
+<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+	 <img src="images/blue/headerB.png" class="customHeader"/>
+	 <br>
+	 <div class="headerText1">
+		City Mall
+	 </div>
+	 <div id="divHeaderLbl" class="headerText2"></div>
+		
+	<img src="images/LogoApp.png" class="customLogo">
+		
+	 <a data-role="button" href=""  id="btnCambiarUbicacion" class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
               <img src="images/btnback.png">
     </a>
-
-    <img id="imgHeaderHome" src="">
+	
+   <!-- <img id="imgHeaderHome" src=""> -->
 	<p/>
 </div>
 
-     <div class="content"  style="padding-top: 10px;">
+     <div class="content"  style="padding-top: 45px;">
          <ul data-role="listview" id="HomeList" style="margin-top:-20px;padding-left: 20px;">
              <div class="ui-grid-d">
 
@@ -152,7 +240,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div class="ui-block-e" id="btnOfertas" style="padding-bottom: 20px;margin-right: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image89','','images/btnOfertasChange.png',1)">
                          <img src="images/btnOfertas.png" id="Image89">
-                         <h3>OFERTAS</h3>
+                         <h6>OFERTAS</h6>
                      </a>
                  </div>
 
@@ -163,7 +251,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div id="btnCalendario" class="ui-block-c" style="margin-left: 7.5%;margin-right: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('eventos','','images/btnEventosChange.png',1)">
                          <img src="images/btnEventos.png" id="eventos">
-                         <h3>EVENTOS</h3>
+                         <h6>EVENTOS</h6>
                      </a>
                  </div>
 
@@ -174,7 +262,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div class="ui-block-e" id="btnTiendas" style="margin-left: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('tiendas','','images/btnTiendasChange.png',1)">
                          <img src="images/btnTiendas.png" id="tiendas">
-                         <h3>TIENDAS</h3>
+                         <h6>TIENDAS</h6>
                      </a>
                  </div>
                  <!--Fin Primera Fila-->
@@ -183,7 +271,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div id="btnCines" class="ui-block-a" style="padding-bottom: 20px;margin-right: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('cines','','images/btnCinesChange.png',1)">
                          <img src="images/btnCines.png" id="cines">
-                         <h3>CINES</h3>
+                         <h6>CINES</h6>
                      </a>
                  </div>
 
@@ -195,7 +283,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div  id="btnComidas" class="ui-block-e" style="margin-left: 7.5%;margin-right: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('comidas','','images/btnComidasChange.png',1)">
                          <img src="images/btnComidas.png" id="comidas">
-                         <h3>COMIDAS</h3>
+                         <h6>COMIDAS</h6>
                      </a>
                  </div>
 
@@ -206,7 +294,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div class="ui-block-e" id="btnMapas" style="margin-left: 7.5%;">
                      <a class="CategoriasHome" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('mapa','','images/btnMapaChange.png',1)">
                          <img src="images/btnMapa.png" id="mapa">
-                         <h3>MAPA</h3>
+                         <h6>MAPA</h6>
                      </a>
                  </div>
                  <!--Fin Segunda Fila-->
@@ -215,7 +303,7 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div class="ui-block-a" style="padding-bottom: 20px;margin-right: 7.5%;">
                      <a class="CategoriasHome" href="#Parqueo" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('parqueo','','images/btnParqueoChange.png',1)">
                          <img src="images/btnParqueo.png" id="parqueo">
-                         <h3>PARQUEO</h3>
+                         <h6>PARQUEO</h6>
 
                      </a>
                  </div>
@@ -228,20 +316,21 @@ background-repeat: initial initial; padding-top: 10px;">
                  <div id="btnContacto" class="ui-block-e" style="margin-left: 7.5%;">
                      <a class="CategoriasHome" href="#Contacto" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contacto','','images/btnContactoChange.png',1)">
                          <img src="images/btnContacto.png" id="contacto">
-                         <h3>CONTACTO</h3>
+                         <h6>CONTACTO</h6>
                      </a>
                  </div>
                  <!--Fin Tercera Fila-->
              </div>
          </ul>
   </div>
-
-    <div align="center">
-        <a id='enlacefb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
-        <a id='enlacetw'><img style="margin-right:8px;" src="images/btntw.png"/></a>		
-		<a id='enlaceinstab'><img style="margin-right:8px;" src="images/btninsta.png"/></a>
-        <a id='enlaceweb'><img style="margin-right:8px;" src="images/btnyt.png"/></a>
-    </div>
+	<br />
+    <div align="center" >
+			<div id="divV" style="color: #fff300; float:left; padding-top: 7px; padding-left: 21px;"> VISÍTANOS DESDE: </div>
+			<a id='enlacefb'><img style="margin-right:8px;" src="images/btnfb.png"/></a>
+			<a id='enlacetw'><img style="margin-right:8px;" src="images/btntw.png"/></a>		
+			<a id='enlaceinstab'><img style="margin-right:8px;" src="images/btninsta.png"/></a>
+			<a id='enlaceweb'><img style="margin-right:8px;" src="images/btnyt.png"/></a>
+		</div>
 
     <div data-role="footer" data-id="foo1" data-position="fixed" class='my-footer'> 
         <div data-role="navbar">
@@ -258,11 +347,17 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--Home Proximamente-->
 <div data-role="page" id="Home1" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-    <div data-role="header" data-position="fixed" >
-        <a data-role="button" id="btnCambiarUbicacion1"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
+    <div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top">
+        <img src="images/blue/headerB.png" class="customHeader"/>
+		<br>
+		 <div class="headerText1">
+			City Mall
+		 </div>
+		 <div id="divHeaderLbl2" class="headerText2"></div>
+		<img src="images/LogoApp.png" class="customLogo">
+		<a data-role="button" id="btnCambiarUbicacion1"  class="BotonBackBorde ui-btn-right" style=" margin-top:0px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
             <img src="images/btnback.png">
         </a>
-        <img id="imgHeaderHome1" src="" width="388" height="137" >
         <p/>
     </div>
     <img id="imgProximamente" style="margin-top:30px; margin-left:10px;" src="">
@@ -279,10 +374,6 @@ background-repeat: initial initial; padding-top: 10px;">
         </div><!-- /navbar -->
     </div><!-- /footer -->
 
-
-
-
-
 </div>
 <!--Fin Home Proximamente-->
 
@@ -290,20 +381,26 @@ background-repeat: initial initial; padding-top: 10px;">
 
 
 <div data-role="page" id="Cines"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
-<div data-role="header" data-position="fixed" >
-	    <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left " style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-              <img src="images/btnback.png">
-        </a>
-    <img src="images/header_cines.png">
 
-	<p/>
-</div>
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+			 <img src="images/red/headerR.png" class="customHeader"/>
+			 <br>
+			 <div class="headerText3">
+				Cines
+			 </div>	
+			<img src="images/LogoApp.png" class="customLogo">
+				
+			 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+					  <img src="images/btnback.png">
+			</a>
+			
+		   <!-- <img id="imgHeaderHome" src=""> -->
+			<p/>
+		</div>
 
-
-<iframe id="FrameMovies" width="100%" frameborder="0" height=418>
+<iframe id="FrameMovies" style="padding-top:45px;" width="100%" frameborder="0" height=418>
 
 </iframe>
-
 
 <div data-role="footer" data-id="foo1" data-position="fixed">
         <div data-role="navbar">
@@ -321,35 +418,33 @@ background-repeat: initial initial; padding-top: 10px;">
 " src="images/btnconfig.png"/></a></li>
             </ul>
 
-
-
         </div><!-- /navbar -->
 </div><!-- /footer -->
 
-
-
-
-
 </div>
-
-
 <!--fin cines-->
 
 
 <!--inicio Ofertas-->
-
-
 <div data-role="page" id="Ofertas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-<div data-role="header" data-position="fixed" >
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top: 5px;padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-        <img src="images/btnback.png">
-  </a>
-    <img src="images/header_ofertas.png" width="388">
-	<p/>
-</div>
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Ofertas
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
-    <ul data-role="listview" id="ListDeals"></ul>
+    <ul data-role="listview" style="padding-top:45px;" id="ListDeals"></ul>
 
 
 <div data-role="footer" data-id="foo1" data-position="fixed">
@@ -368,16 +463,22 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--Tiendas-->
 <div data-role="page" id="Tiendas"  data- style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-<div data-role="header" data-position="fixed" >
-	 <a data-role="button" href="#Home" class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-               <img src="images/btnback.png">
-  </a>
-    <img src="images/header_tiendas.png" width="388">
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Tiendas
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+		<p/>
+	</div>
 
-	<p/>
-</div>
-
-     <div class="content" id="results">
+     <div class="content" style="padding-top:25px;" id="results">
          <ul class="ui-grid-a " id="listCategoriesStores"  style="
                                         padding-left: 10px;
                                         padding-right: 10px;">
@@ -394,35 +495,31 @@ background-repeat: initial initial; padding-top: 10px;">
             </ul>
         </div><!-- /navbar -->
 </div><!-- /footer -->
-
-
-
-
-
 </div>
-
 <!--fin Tiendas-->
 
 <!--Tiendas Categorias-->
-
 <div data-role="page" id="TiendasCategorias" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div id="headerCategory" data-role="header" data-position="fixed" style="background: url('images/header1_XL.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <div class="headerText3" style="padding-top:15px;">
+		 Tiendas
+		 </div>
+		 <br>
+		 <br>
+		 <div class="headerText4" id="categoryNameStore">
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo2">
+			
+		 <a data-role="button" href="#Tiendas"  class="BotonBackBorde ui-btn-left" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+		<p/>
+	</div>
 
-
-<div data-role="header" data-position="fixed" >
-	 <a data-role="button" href="#Tiendas"  class="BotonBackBorde ui-btn-left" style=" margin-top: 5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none; ">
-               <img src="images/btnback.png">
-    </a>
-	<div>
-        <img id="imgHeaderDeals" src="">
-
-    </div>
-
-	<p/>
-</div>
-
-
-   <div data-role="content">
+   <div data-role="content" style="padding-top:40px; ">
                 <ul class="list" id="listCategoriesStoresSelected" data-role="listview" data-theme="c" data-inset="true" style="
     margin-top: -14px;">
                 </ul>
@@ -445,22 +542,20 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--Tienda Seleccionada-->
 <div data-role="page" id="StoreSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-
-
-
-    <div data-role="header" data-position="fixed" >
-
-        <a data-role="button" href="#TiendasCategorias"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-
-
-        </a>
-
-        <img src="images/header_bancos.png" width="388">
-
-        <p/>
-    </div>
-    <div data-role="content">
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Tiendas
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+		 <a data-role="button" href="#TiendasCategorias"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		<p/>
+	</div>
+	
+    <div data-role="content" style="padding-top:40px;">
         <ul class="list" data-role="listview" id="ulListStoreSelected"  data-inset="true" style="
                 margin-top: -14px;">
 
@@ -505,11 +600,7 @@ background-repeat: initial initial; padding-top: 10px;">
         </div>
 
     </div>
-
-
-
-
-
+	
     <div data-role="footer" data-id="foo1" data-position="fixed">
 
         <div data-role="navbar">
@@ -540,20 +631,23 @@ background-repeat: initial initial; padding-top: 10px;">
 
 <div data-role="page" id="Parqueo" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Parqueo
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
-
-
-<div data-role="header" data-position="fixed" >
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-    </a>
-    <img src="images/header_parqueo.png" width="388" >
-	<p/>
-
-
-
-</div>
-    <img style="margin-top:0px; margin-left:5%;" src="images/estacionamientoinfo.png">
+    <img style="margin-top:0px; margin-left:5%; padding-top:40px;" src="images/estacionamientoinfo.png">
 
 
 
@@ -588,21 +682,24 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--inicio eventos-->
 <div data-role="page" id="Eventos" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Eventos
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
-
-
-<div data-role="header" data-position="fixed" >
-
-
-	<a data-role="button" href="#Home" class=" BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-         <img src="images/btnback.png">
-    </a>
-
-    <img src="images/header_eventos.png" width="388" >
-	<p/>
-</div>
     <div>
-        <div id="calendar" style="margin-left: 10px; margin-right: 10px;">
+        <div id="calendar" style="margin-left: 10px; margin-right: 10px; padding-top:40px;">
 
         </div>
         <!--<a id= "btnLlamarSabado" >-->
@@ -643,20 +740,22 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--inicio sabado 21-->
 <div data-role="page" id="EventSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Eventos
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Eventos"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
-
-
-
-
-<div data-role="header" data-position="fixed" >
-
-	<a data-role="button" href="#Eventos"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-             <img src="images/btnback.png">
-    </a>
-
-    <img src="images/header_eventos.png" width="388" >
-	<p/>
-</div>
     <div data-role="content" id="InformationEvents">
 
 
@@ -694,32 +793,30 @@ background-repeat: initial initial; padding-top: 10px;">
         </div><!-- /navbar -->
     </div><!-- /footer -->
 
-
-
-
-
 </div>
 <!--fin sabado 21-->
 
 <!-- inicio mapas-->
 <div data-role="page" id="Mapas" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Directorio
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
 
-
-
-
-<div data-role="header" data-position="fixed" >
-
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-               <img src="images/btnback.png">
-    </a>
-
-    <img src="images/header_directorio.png" width="388" >
-	<p/>
-</div>
-
-    <div class="content" id="levelsResults">
+    <div class="content" id="levelsResults" style="padding-top:25px;">
         <ul class="ui-grid-a " id="listLevelsMall"  style="
                                         padding-left: 10px;
                                         padding-right: 10px;">
@@ -763,28 +860,27 @@ background-repeat: initial initial; padding-top: 10px;">
 
 <!-- fin mapas-->
 
-<!-- inicio mapas-->
+<!-- inicio mapa seleccionado-->
 <div data-role="page" id="MapSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-
-
-
-
-
-    <div data-role="header" data-position="fixed" >
-
-        <a data-role="button" href="#Mapas"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-        </a>
-
-        <img src="images/header_directorio.png" width="388" >
-        <p/>
-    </div>
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Directorio
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Mapas"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
 
     <div>
        <img id="imgMapSelected" src="">
-
-
 
     </div>
 
@@ -820,40 +916,34 @@ background-repeat: initial initial; padding-top: 10px;">
 
 </div>
 
-<!-- fin mapas-->
+<!-- fin mapa seleccionado-->
 
 <!-- inicio comidas-->
 
 
 <div data-role="page" id="Comidas" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Comidas
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+		<p/>
+	</div>
 
 
-
-
-
-<div data-role="header" data-position="fixed" >
-
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5px;padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-               <img src="images/btnback.png">
-
-    </a>
-
-    <img src="images/header_comidas.png" width="388" >
-	<p/>
-</div>
-    <div data-role="content">
-
+    <div data-role="content" style="padding-top:45px;">
         <ul data-role="listview" id="listFood">
 
-
-
-
         </ul>
-
         <!--<ul class="list" style="margin-top: -14px;" id="listFood" data-role="listview" data-theme="c" data-inset="true">-->
-
-
         <!--</ul>-->
     </div>
 
@@ -882,11 +972,6 @@ background-repeat: initial initial; padding-top: 10px;">
 
         </div><!-- /navbar -->
     </div><!-- /footer -->
-
-
-
-
-
 </div>
 
 
@@ -894,18 +979,24 @@ background-repeat: initial initial; padding-top: 10px;">
 
 <!--Comida Seleccionada-->
 <div data-role="page" id="foodSelected" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
-
-
-
-
-    <div data-role="header" data-position="fixed" >
-        <a data-role="button" href="#Comidas"  class="BotonBackBorde ui-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-        </a>
-        <img src="images/header_comidas.png" width="388"/>
-        <p/>
-    </div>
-    <div data-role="content">
+	
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Comidas
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Comidas"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
+	
+    <div data-role="content" style="padding-top:40px;">
         <ul class="list" data-role="listview" id="ulListfoodSelected"  data-inset="true" style="
     		margin-top: -14px;">
 
@@ -981,24 +1072,25 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--Fin Tienda Seleccionada-->
 
 <!-- inicio about-->
-
-
 <div data-role="page" id="About" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-
-
-
-
-
-<div data-role="header" data-position="fixed" >
-
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-             <img src="images/btnback.png">
-    </a>
-
-    <img src="images/header_acercade.png" width="388" >
-	<p/>
-</div>
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Acerca De
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
+	
+	<div style="padding-top:40px;">
     <div> <img src="images/logosabout.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </div>
 		<p/>
 	  <div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
@@ -1032,6 +1124,7 @@ background-repeat: initial initial; padding-top: 10px;">
 
 
 
+	  </div>
 	  </div>
 
     <div data-role="footer" data-id="foo1" data-position="fixed">
@@ -1071,20 +1164,23 @@ background-repeat: initial initial; padding-top: 10px;">
 
 <div data-role="page" id="About1" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
-
-
-
-
-
-    <div data-role="header" data-position="fixed" >
-
-        <a data-role="button" href="#Home1"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-        </a>
-
-        <img src="images/header_acercade.png" width="388" >
-        <p/>
-    </div>
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Acerca De
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+			
+		 <a data-role="button" href="#Home1"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		
+	   <!-- <img id="imgHeaderHome" src=""> -->
+		<p/>
+	</div>
+	
+	<div style="padding-top:40px;">
     <div> <img src="images/logosabout.png" style="padding-left: 5%; padding-right: 5%; margin-top:0px"> </div>
     <p/>
     <div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
@@ -1119,6 +1215,7 @@ background-repeat: initial initial; padding-top: 10px;">
 
 
     </div>
+	</div>
 
     <div data-role="footer" data-id="foo1" data-position="fixed">
         <div data-role="navbar">
@@ -1157,22 +1254,20 @@ background-repeat: initial initial; padding-top: 10px;">
 
 <div data-role="page" id="Contacto" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
 
+	<div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Contacto
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		<p/>
+	</div>
 
-
-
-
-
-<div data-role="header" data-position="fixed" >
-
-	<a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-             <img src="images/btnback.png">
-    </a>
-
-    <img src="images/header_contacto.png" width="388" >
-	<p/>
-</div>
-
-<div>
+<div style="padding-top:90px;">
 <!--<img src="images/contactosac.png" style=" margin-left:5px; padding-left: 5%; padding-right: 5%; margin-top:0px"> -->
 
 <div id="contact_infos"  style=" text-align:center; -webkit-margin-before: 0; margin-left: 10px;  margin-top: -20px;">
@@ -1182,7 +1277,6 @@ background-repeat: initial initial; padding-top: 10px;">
                  <p><h2><strong id="txtContactoTitulo"></strong></h2></p>
                  <p id="txtContactoDescripcion"></p>
                  <!--<p>San Pedro Sula, Honduras</p>-->
-                 <br/>
                  <br/>
 				 <span></span>
                  <span></span>
@@ -1213,24 +1307,9 @@ background-repeat: initial initial; padding-top: 10px;">
 
 
                  </div>
-
-
-
-
-
-
-
 		 </div>
-
-
-
-
 	  </div>
-</div>
-
-
-
-
+	  
     <div data-role="footer" data-id="foo1" data-position="fixed">
         <div data-role="navbar">
             <ul>
@@ -1245,18 +1324,9 @@ background-repeat: initial initial; padding-top: 10px;">
     height: 53px;
 " src="images/btnconfig.png"/></a></li>
 
-
             </ul>
-
-
-
         </div><!-- /navbar -->
     </div><!-- /footer -->
-
-
-
-
-
 </div>
 <!--fin contacto-->
 
@@ -1265,16 +1335,19 @@ background-repeat: initial initial; padding-top: 10px;">
 <!--inicio BUSCAR-->
 
 <div data-role="page" id="Buscar" style="padding-top: 155px; padding-bottom: 71px; min-height: 414px;background: white;">
-    <div data-role="header" data-position="fixed" >
-
-        <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-left" style=" margin-top:5x; padding-top: 0px; border: 0px; color: #000;text-shadow: none;">
-            <img src="images/btnback.png">
-        </a>
-
-        <img src="images/header_buscar.png" width="388" >
-        <p/>
-    </div>
-
+    <div data-role="header" data-position="fixed" style="background: url('images/header1.png');background-repeat: repeat-x; background-position: top top" >
+		 <img src="images/red/headerR.png" class="customHeader"/>
+		 <br>
+		 <div class="headerText3">
+			Buscar
+		 </div>	
+		<img src="images/LogoApp.png" class="customLogo">
+		 <a data-role="button" href="#Home"  class="BotonBackBorde ui-btn-right" style=" color:white; margin-top:0px;  padding-top: 0px; border: 0px;text-shadow: none;">
+				  <img src="images/btnback.png">
+		</a>
+		<p/>
+	</div>
+	
     <div data-role="content" style="margin-top: -32px;">
 
         <div data-role="fieldcontain">
