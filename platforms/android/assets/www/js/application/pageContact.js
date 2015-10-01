@@ -87,7 +87,6 @@ function renderInfo(data)
 
 function getContact()
 {
-    debugger;
     $.mobile.loading( 'show', {
         text: 'Cargando...',
         textVisible: true,

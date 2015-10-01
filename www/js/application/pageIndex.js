@@ -97,7 +97,18 @@ function CreateListMall(data){
                 img = jQuery('<img/>');
 
                 img.attr('id','imgListMall'+i).attr('src','');
-                a.attr('value',data[i].Id).attr('facebook',data[i].EnlaceFacebook).attr('Instagram',data[i].EnlaceInstagram).attr('Pinterest',data[i].EnlacePinterest).attr('Twitter',data[i].EnlaceTwitter).attr('SitioWeb',data[i].SitioWeb).attr('imageMenu',data[i].ImagenMenu).attr('Estado',data[i].Estado).attr('ImagenProximamente',data[i].ImagenProximamente).attr('Cine',data[i].EnlaceCine).attr('onclick','getIdMall(this)');
+                a.attr('value',data[i].Id);
+				a.attr('facebook',data[i].EnlaceFacebook);
+				a.attr('Instagram',data[i].EnlaceInstagram);
+				a.attr('Pinterest',data[i].EnlacePinterest);
+				a.attr('Twitter',data[i].EnlaceTwitter);
+				a.attr('SitioWeb',data[i].SitioWeb);
+				a.attr('imageMenu',data[i].ImagenMenu);
+				a.attr('Estado',data[i].Estado);
+				a.attr('ImagenProximamente',data[i].ImagenProximamente);
+				a.attr('Cine',data[i].EnlaceCine);
+				a.attr('onclick','getIdMall(this)');
+				a.attr('nameMall',data[i].Nombre);
 
                 a.append(img);
                 ul.append(a);
@@ -140,11 +151,13 @@ function getIdMall(id){
 //        );
 
 
-    var imgMenu = document.getElementById('imgHeaderHome');
-    imgMenu.src = 'data:image/jpeg;base64,'+ $(id).attr('imageMenu');
-
-    var imgMenu1 = document.getElementById('imgHeaderHome1');
-    imgMenu1.src = 'data:image/jpeg;base64,'+ $(id).attr('imageMenu');
+    var divHeader = document.getElementById('divHeaderLbl');
+    divHeader.innerText = $(id).attr('nameMall');
+	var divHeader2 = document.getElementById('divHeaderLbl2');
+    divHeader2.innerText = $(id).attr('nameMall');
+	
+   // var imgMenu1 = document.getElementById('imgHeaderHome1');
+   // imgMenu1.src = 'data:image/jpeg;base64,'+ $(id).attr('imageMenu');
 
 
     jQuery('#enlaceweb').removeAttr('onclick');
